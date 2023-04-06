@@ -49,7 +49,8 @@ This also explains some of the quirks we see. For example, if you put your face 
 Lastly, the model on the website is actually the second version. The first model I trained reached a validation accuracy of 93.76% but performed A LOT worse in live mask detection. I noticed that the model only worked well in specific lighting, so using data augmentation I trained the model to be better at different lighting conditions, and it ended up working well!
 ## What do the words mean?
 <div class="table-wrapper" markdown="block">
-|Word|Definition |
+
+|Word|Definition|
 |:---|:---|
 |Epoch|An entire passing of the the training data through the model|
 |Hyperparameter|A machine learning parameter, or value, that affects the model and is chosen before the learning algorithm is executed|
@@ -65,4 +66,5 @@ Lastly, the model on the website is actually the second version. The first model
 |Feature Extraction|In general, feature extraction refers to reducing the number of dimensions used to describe a dataset, essentially finding important features of the data. In this case, feature extraction refers to how MobileNet V2, after being trained on a much larger dataset, likely detects meaningful features of the image, such as the presence of a nose or mouth|
 |Convolutional Neural Network|A class of neural networks commonly used for image classification and related tasks. It excels at these tasks through operations called convolutions|
 |Convolution|An operation that extracts various patterns from an image through the application of filters. Mimics the feature detectors of human vision|
+
 </div>
