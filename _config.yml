@@ -36,6 +36,9 @@ exclude:
   - _drafts
 
 collections:
+  articles:
+    output: true
+    permalink: /:collection/:path/
   pages:
     output: true
     permalink: /:collection/:path/
