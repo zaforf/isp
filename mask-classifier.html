@@ -109,7 +109,7 @@ layout: post
 	    ctx.fillStyle = "rgba(255, 0, 255, 1)"; 
 
 	    facefind = await blazeface.load();
-	    mask_model = await tf.loadLayersModel('static/model/model.json');
+	    mask_model = await tf.loadLayersModel('assets/model/model.json');
 		renderPrediction();
 	};
 
