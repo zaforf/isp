@@ -11,36 +11,36 @@ layout: post
 </head>
 <body>
 	<div style="text-align: center;">
-			<span id="emoji" STYLE="font-size:20pt;display:inline-block;padding-bottom:2%;">😃</span>
+			<span id="emoji" STYLE="font-size:20pt;display:inline-block;padding-bottom:2%;">😃 Initializing... Reload if this takes too long</span>
 			<video id="video" style="margin:auto;display:block;"></video>
 			<canvas id="output" style="margin:auto;position:relative;top:-480px;left:10px;"></canvas>
     </div>
 </body>
 <script>
 	var facefind, mask_model, ctx, videoWidth, videoHeight, canvas;
-	video = document.getElementById('video');
-	const state = {
+	state = {
 	  backend: 'webgl'
 	};
 	var mn=0,mo=0;
 	async function setupCamera() {
-		const stream = await navigator.mediaDevices.getUserMedia({
+		stream = await navigator.mediaDevices.getUserMedia({
 			'audio': false,
 		    'video': { facingMode: 'user' },
 		});
 		video.srcObject = stream;
 	    return new Promise((resolve) => {
-		    video.onloadedmetadata = () => {
+			video.onloadedmetadata = () => {
 				resolve(video);
 		    };
 		});
+		t = model.predict(tf.zeros([1,224,224,3]));
 	}
-	const renderPrediction = async () => {
+	renderPrediction = async () => {
 		tf.engine().startScope()
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		ctx.beginPath();
-		const predictions = await facefind.estimateFaces(video, true,false,false);
-		const offset = tf.scalar(127.5);
+		predictions = await facefind.estimateFaces(video, true,false,false);
+		offset = tf.scalar(127.5);
 		if (predictions.length > 0) {		
 		    for (let i = 0; i < predictions.length; i++) {
 			    var start = predictions[i].topLeft.arraySync();
@@ -58,7 +58,7 @@ layout: post
 				// mask	on	mask off
 				if (result[0]==1) {
 					ctx.strokeStyle = "#3c784c";
-					if (mo+mn>30)
+					if (mo+mn>15)
 						if (mn==0)
 							mo--;
 						else
@@ -68,14 +68,14 @@ layout: post
 				else {
 					// no mask
 					ctx.strokeStyle = "#8c3535";
-					if (mo+mn>30)
+					if (mo+mn>15)
 						if (mo==0)
 							mn--;
 						else
 							mo--;
 					mn++;
 				}
-				if (mo+mn>30){
+				if (mo+mn>15){
 					if (mo>mn) {
 						document.getElementById("emoji").textContent="😷 You are wearing a mask!";
 					} else {
@@ -92,7 +92,7 @@ layout: post
 		tf.engine().endScope()
 	};
 
-	const setupPage = async () => {
+	setupPage = async () => {
 	    await tf.setBackend(state.backend);
 	    await setupCamera();
 	    video.play();
@@ -111,8 +111,8 @@ layout: post
 	    mask_model = await tf.loadLayersModel('https://zaforf.github.io/isp/assets/model/model.json');
 		renderPrediction();
 	};
-
+	setTimeout(()=> {
 	setupPage();
-
+	},500);
 </script>
 </html>
