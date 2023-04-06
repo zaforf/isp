@@ -1,6 +1,6 @@
 ---
-title: Tips, Warnings, and Dangers
-author: Tao He
+title: Convolutional Neural Networks
+author: Zafir Nasim
 date: 2022-06-30
 category: Jekyll
 layout: post
