@@ -3,7 +3,6 @@ title: Mask Classifier
 layout: post
 ---
 
-<!DOCTYPE html>
 <html>
 <head>
 	<title> Mask Classifier </title>
