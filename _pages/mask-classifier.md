@@ -11,7 +11,7 @@ layout: post
 </head>
 <body>
 	<div style="text-align: center;">
-			<span id="emoji" STYLE="font-size:20pt;display:inline-block;padding-bottom:2%;">😃 Initializing... Reload if this takes too long</span>
+			<span id="emoji" STYLE="font-size:20pt;display:inline-block;padding-bottom:2%;">😃 Reload then wait</span>
 			<video id="video" style="margin:auto;display:block;"></video>
 			<canvas id="output" style="margin:auto;position:relative;top:-480px;left:10px;"></canvas>
     </div>
@@ -111,8 +111,8 @@ layout: post
 	    mask_model = await tf.loadLayersModel('https://zaforf.github.io/isp/assets/model/model.json');
 		renderPrediction();
 	};
-	setTimeout(()=> {
+
 	setupPage();
-	},500);
+
 </script>
 </html>
