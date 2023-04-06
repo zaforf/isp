@@ -18,7 +18,7 @@ layout: post
 </body>
 <script>
 	var facefind, mask_model, ctx, videoWidth, videoHeight, canvas;
-	const video = document.getElementById('video');
+	video = document.getElementById('video');
 	const state = {
 	  backend: 'webgl'
 	};
@@ -108,7 +108,7 @@ layout: post
 	    ctx.fillStyle = "rgba(255, 0, 255, 1)"; 
 
 	    facefind = await blazeface.load();
-	    mask_model = await tf.loadLayersModel('assets/model/model.json');
+	    mask_model = await tf.loadLayersModel('https://zaforf.github.io/isp/assets/model/model.json');
 		renderPrediction();
 	};
 

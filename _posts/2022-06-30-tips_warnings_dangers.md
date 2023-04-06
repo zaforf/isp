@@ -48,8 +48,10 @@ model = tf.keras.Sequential([
 ```
 The two last layers are the fully connected "normal" neural network layers. There is 128 nodes of fully-connected neurons, which means that each of the nodes is connected to each of flattened neuron, followed by 10 neurons in the output layer. This model was made for classifying the MNIST handwritten digits dataset so there is 10 classes for 10 digits and they have a softmax activation so that the output represents a probability (the sum of the outputs is 1).
 ![Linear/Fully-Connected Layers User's Guide - NVIDIA Docs](https://docscontent.nvidia.com/dita/00000186-1a08-d34f-a596-3f291b140000/deeplearning/performance/dl-performance-fully-connected/graphics/fc-layer.svg)
+
 *A set of output neurons fully connected to a sit of input neurons*
 
 Obviously the amount of output neurons for a CNN changes based on the task. For example for binary (two classes) classification problem the output code be one neuron representing the probability of the input being one of the classes. This would use the sigmoid activation function.
 ![Sigmoid function - Wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/1200px-Logistic-curve.svg.png)
-The sigmoid activation function, $σ(x) = \frac{1}{1+e^{-x}}$
+
+*The sigmoid activation function, $σ(x) = \frac{1}{1+e^{-x}}$*
