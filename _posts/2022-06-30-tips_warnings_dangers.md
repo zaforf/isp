@@ -6,7 +6,6 @@ category: Jekyll
 layout: post
 ---
 
-
 A **convolutional neural network**, or CNN for short, is specifically designed to process pixel and image data, which is why they excel at image recognition tasks such as the mask classifier. They do this using an operation called a **convolution**, which are applied to the image in a convolution layer. When a convolution is applied to an image, the model slides many learnable filters, or kernels, across the image. These kernels are much smaller than the image: for example, the image might be 128 pixels by 128 pixels, while the kernel is only 3 pixels by 3 pixels. Each of the pixels of the kernel has an activation value that is multiplied with to the subset of the image that the kernel is over. These multiples are then summed and used to create a new, smaller image.
 
 ![Kernel being applied to an image](https://anhreynolds.com/img/cnn.png)
