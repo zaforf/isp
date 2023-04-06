@@ -49,8 +49,8 @@ This also explains some of the quirks we see. For example, if you put your face 
 Lastly, the model on the website is actually the second version. The first model I trained reached a validation accuracy of 93.76% but performed A LOT worse in live mask detection. I noticed that the model only worked well in specific lighting, so using data augmentation I trained the model to be better at different lighting conditions, and it ended up working well!
 ## What do the words mean?
 <div class="table-wrapper" markdown="block">
-|Word| Definition |
-|--|--|
+|Word|Definition |
+|:---|:---|
 |Epoch|An entire passing of the the training data through the model|
 |Hyperparameter|A machine learning parameter, or value, that affects the model and is chosen before the learning algorithm is executed|
 |Learning rate|A hyperparameter that controls the pace at which the model minimizes the loss function|
