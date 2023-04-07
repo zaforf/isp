@@ -11,7 +11,7 @@ layout: post
 </head>
 <body>
 	<div style="text-align: center;">
-			<span id="emoji" STYLE="font-size:20pt;display:inline-block;padding-bottom:2%;">😃 Reload then wait</span>
+			<span id="emoji" STYLE="font-size:20pt;display:inline-block;padding-bottom:2%;">😃 Reload then wait!</span>
 			<video id="video" style="margin:auto;display:block;"></video>
 			<canvas id="output" style="margin:auto;position:relative;top:-480px;left:10px;"></canvas>
     </div>
@@ -46,7 +46,7 @@ layout: post
 			    var start = predictions[i].topLeft.arraySync();
 			    var end = predictions[i].bottomRight.arraySync();
 			    var size = [end[0] - start[0], end[1] - start[1]];
-			    if(videoWidth<end[0] || videoHeight<end[1]){
+			    if(videoWidth<end[0] || videoHeight<end[1] || start[0]<0 || start[1]<0){
 			    	break
 			    }
 			    var inputImage = tf.browser.fromPixels(video).toFloat();
