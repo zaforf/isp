@@ -1,5 +1,9 @@
-# Gradient-Based Learning
-
+---
+title: Gradient-Based Learning
+author: Zafir Nasim
+category: Jekyll
+layout: post
+---
 Here we will explore that magical process by which machines learn. First, we need a metric by which we can measure the performance of the model. This is like defining what we want the model to be good at. For example, if you were to command someone to "get good at drawing," they would likely ask you what exactly it means to be "good at drawing." Similarly, this metric defines what the model needs to "get good at," and it is called the **loss function**.
 
 Let us define a simple model with one learnable parameter, $A$. A **learnable parameter** is a number, usually either a weight or a bias, that is adjusted during training. In this case, let us ignore how exactly $A$ is relevant to the output of the model and instead create an arbitrary loss, or objective function:
