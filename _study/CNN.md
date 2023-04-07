@@ -1,7 +1,6 @@
 ---
 title: Convolutional Neural Networks
 author: Zafir Nasim
-date: 2022-06-30
 category: Jekyll
 layout: post
 ---
