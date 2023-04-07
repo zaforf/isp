@@ -28,10 +28,12 @@ There are many different types of GANs, each specialized to its own generation t
 2. **Conditional GANs (CGANs)**: GANs take as input additional information, such as class labels. Both the discriminator and generator, which still receive random input, receive the additional class label, so the model learns how to generate data with more variety
 3. **Deep Convolutional GANs (DCGANs)**: GANs that use convolutional neural networks in the generator and discriminator, commonly used for image generation
 4. **CycleGANs**: GANs designed for image-to-image translation tasks. They do this by training two generators and two discriminators with a "cycle consistency loss" function, which assumes that if you translate an image of a horse into a zebra and back into a horse, you receive the same original image. They achieve great results in the absence of images, which are often difficult to obtain![Artificial Data Generation With GANs - CycleGAN](https://cdn.neurosys.com/wp-content/uploads/2021/09/cyclegan_diagram_neurosys-1024x313.png) *The architecture of a CycleGAN*
-5. **Wasserstein GANs (WGANs)**: A variant of GANs that uses a different loss function to improve performance. More about them can be found here
+
+5. **Wasserstein GANs (WGANs)**: A variant of GANs that uses a different loss function to improve performance. More about them can be found [here](https://zaforf.github.io/isp/study/GAN/#what-are-the-shortfalls-of-gans)
 6. **Progressive Growing GAN (PGGANs)**: GANs that create higher-quality image data by incrementally adding layers to the generator and discriminator during the training process. Thus, first the model learns structure, then progressively finer details. This is unlike a simpler GAN, which might reach an undesirable compromise by attempting to do both simultaneously
 
 ![CycleGAN | TensorFlow Core](https://www.tensorflow.org/static/tutorials/generative/images/horse2zebra_1.png)
+
 *The power of CycleGANs*
 
 ## How do GANs produce realistic image data?
@@ -61,10 +63,13 @@ Maybe right now you are thinking GANs sound great, just as I did when I first le
 Despite these problems, GANs have produced great results in recent years. Let us take a moment to appreciate what they can generate!
 
 ![StyleGAN](https://machinelearningmastery.com/wp-content/uploads/2019/06/Example-of-One-Set-of-Generated-Faces-Left-Adopting-the-Coarse-Style-of-Another-Set-of-Generated-Faces-Top.png)
+
 *StyleGAN, a type of PGGAN*
 
 ![Pix2pix](https://www.tensorflow.org/images/gan/pix2pix_2.png)
+
 *Pix2Pix, a type of CGAN*
 
 ![png](https://www.tensorflow.org/static/tutorials/generative/generate_images_with_stable_diffusion_files/output_twYIlD1hojeI_1.png)
+
 *Stable Diffusion, given the input "photograph of an astronaut riding a horse"*

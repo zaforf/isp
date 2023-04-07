@@ -37,18 +37,20 @@ First, as a disclaimer, we can't be sure why this is happening. The model is jus
 Inevitably, that data is where the model learns all of its knowledge from. Thus, undesirable trends in the data become quirks in the model. For example, naturally, there is more variation among the pictures of faces wearing masks. As stated in the dataset description, the images with masks are scraped from Google, while the images without masks are taken from the CelebFace dataset by Jessica Li. 
 <div style="text-align: center;">
 
-![](../assets/1012.png) ![](../assets/1037.png) ![](../assets/1043.png)
+![](/assets/1012.png) ![](/assets/1037.png) ![](/assets/1043.png)
 
 *The most "angled" faces of the first 30 images in the both datasets*
+
 </div>
 
 Obviously, the pictures of celebrities are more standardized: they are facing the camera. This is not the case with the mask-wearing images, which are pulled from numerous sources and comprise a large variety of face angles and resolutions. In other words, rather than detecting whether you are wearing a mask, the model might have learned to predict if you are looking to the side, since most of the images of faces looking to the side were in the mask-wearing pile.
 
 <div style="text-align: center;">
 
-![](../assets/1044.png)
+![](/assets/1044.png)
 
 *An image in the mask-worn dataset*
+
 </div>
 
 The issue of data also explains why non-mask objects are perceived to be masks. The model does not know what a mask is; that was not its task. Instead, its task was to classify if people were wearing masks, and from the data it saw, it learned that the mouth and nose are usually covered when a mask is worn. Thus, when whatever specific pattern the model is looking for is satisfied, perhaps that the nose and mouth are covered, it assumes you are wearing a mask. This applies whether the object covering your face is a mask or not.
