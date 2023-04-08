@@ -7,13 +7,17 @@ Here I will post results and what I learned from neural network from scratch (on
 
 I used my knowledge of gradient based learning and backpropagation as well as some example notebooks to create this network from scratch. This notebook in particular was especially helpful, especially for using `pandas`.
 
+<div align="center" markdown="1">
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Irissetosa1.jpg" width=30%>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Blue_Flag%2C_Ottawa.jpg/440px-Blue_Flag%2C_Ottawa.jpg" width=22.5%>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Iris_virginica_2.jpg/440px-Iris_virginica_2.jpg" width=22.56%>
 
+
 The three *Iris* species used in the famous Iris flower dataset
 
 *Iris Setosa*, *Iris Versicolour*, *Iris Virginica*
+
+</div>
 
 The code in the notebook is my second version, where I turned everything into functions. The original version had a set architecture of `(4,5,3)`, the same as the original notebook that I used for reference. In this newer version I can make any model architecture and train it by calling only a few functions, which I think is really cool!
 
@@ -121,5 +125,3 @@ My neural network works pretty well on the Iris dataset, but theoretically it sh
 ![](https://zaforf.github.io/isp/assets/model.png)
 
 *The model I used for the approximations; (1,10,10,10,1)*
-
-</div>
