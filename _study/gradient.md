@@ -16,8 +16,11 @@ Let's say that the derivative is greater than 0. Since we are trying to minimize
 $$A_{new} = A_{old}-\delta  \frac{dL}{dA}\bigg|_{A=A_{old}}$$
 
 When we iteratively perform this for a few steps, we essentially descend the gradient, or slope, of the loss function. 
+<div align="center" markdown="1">
 
 ![Gradient descent](https://static.javatpoint.com/tutorial/machine-learning/images/gradient-descent-in-machine-learning3.png)
+</div>
+
 *Gradient descent, along with the importance of the step size, or **learning rate**. In this case a smaller learning rate is optimal to more predictably descend the loss function*
 
 This is why this process of iteratively optimizing the model is called **gradient descent**. Ok, that's great and all, but how does this scale to a larger model with more learnable parameters? Very simply, we change our loss function to now take in input, $x$, and the parameters, $\theta$:

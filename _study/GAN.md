@@ -17,7 +17,11 @@ Note that the generator's job is harder than the discriminators. As shown in the
 
 More concretely, generators must learn that "things that look like trees are more likely to be on things that look like land" and that "eyes and ears are unlikely to appear on the forehead." These are obviously pretty complicated. By contrast, the discriminator only needs to look for a few important patterns to immediately know the image is fake.
 
+<div align="center" markdown="1">
+
 ![](https://cdn.analyticsvidhya.com/wp-content/uploads/2017/06/14204616/s1.jpg)
+
+</div>
 
 The generator output and discriminator input are directly linked. Hence, through back-propagation, the discriminator can tell the generator exactly why it classified or did not classify its generated samples as real, so the generator can then use that knowledge to improve.
 
@@ -62,6 +66,8 @@ Maybe right now you are thinking GANs sound great, just as I did when I first le
 
 Despite these problems, GANs have produced great results in recent years. Let us take a moment to appreciate what they can generate!
 
+<div align="center" markdown="1">
+
 ![StyleGAN](https://machinelearningmastery.com/wp-content/uploads/2019/06/Example-of-One-Set-of-Generated-Faces-Left-Adopting-the-Coarse-Style-of-Another-Set-of-Generated-Faces-Top.png)
 
 *StyleGAN, a type of PGGAN*
@@ -73,3 +79,5 @@ Despite these problems, GANs have produced great results in recent years. Let us
 ![png](https://www.tensorflow.org/static/tutorials/generative/generate_images_with_stable_diffusion_files/output_twYIlD1hojeI_1.png)
 
 *Stable Diffusion, given the input "photograph of an astronaut riding a horse"*
+
+</div>
