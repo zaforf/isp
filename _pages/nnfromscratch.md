@@ -120,7 +120,7 @@ My neural network works pretty well on the Iris dataset, but theoretically it sh
 
 ![](https://zaforf.github.io/isp/assets/sinex.png)
 
-*Approximating $0.4\text{sin}(x)+0.5$ from 0 to 14 when it was only trained on 0 to 7; as you can see, it can neither extrapolate well, nor reach values near 1 because of the sigmoid activation function*
+*Approximating $0.5\text{sin}(x)+0.5$ from 0 to 14 when it was only trained on 0 to 7; as you can see, it can neither extrapolate well, nor reach values near 1 because of the sigmoid activation function*
 
 ![](https://zaforf.github.io/isp/assets/tan.png)
 
