@@ -46,7 +46,7 @@ $$ (4,1) = (4,3)*(3,1)+(4,1)$$
 
 With the dimensions of multiplying matrices following $(a,b)*(b,c) = (a,c)$. With the appropriate definitions we can write this as
 
-$$\begin{equation} z = Wx +b \end{equation}$$
+$$z = Wx +b \tag{1}$$
 
 Finally, an activation function is applied element-wise (the function is applied independently to each value) with this vector $z$ to get the actual set of outputs, $a$. Yes, I lied; $z$ is not the actual set of outputs but the set just before it. 
 
@@ -54,7 +54,7 @@ $$ a = \sigma(z)$$
 
 Our model applies this operation to the output of each layer to get $\hat{y}$ from the last layer. Remember that the output of one layer is the input of the next. Finally, let us define the loss very simply as $y-\hat{y}$. Now, after defining these things, we can get to backpropagation. Specifically, the question is: how do we calculate the gradient of the loss with respect to every weight and bias? Here is the answer:
 
-$$\begin{equation} \frac{\partial L}{\partial W_j}=\frac{\partial L}{\partial a_j}\frac{\partial a_j}{\partial z_j}  \frac{\partial z_j}{\partial W_j} \end{equation}$$
+$$\frac{\partial L}{\partial W_j}=\frac{\partial L}{\partial a_j}\frac{\partial a_j}{\partial z_j}  \frac{\partial z_j}{\partial W_j} \tag{2}$$
 
 Where the subscript $j$ means we are referring to each of the $W$, $a$, and $z$ of the $j$th layer. The fancy symbol $\partial$ means that we are taking the partial derivative, which is like a normal derivative, but you treat everything as a constant (except whatever the derivative is taken with respect to). From this we see that
 
