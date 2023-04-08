@@ -47,7 +47,7 @@ model = tf.keras.Sequential([
 ```
 The two last layers are the fully connected "normal" neural network layers. There are 128 nodes of fully connected neurons, which means that each of the nodes is connected to each flattened neuron, followed by 10 neurons in the output layer. This model was made for classifying the MNIST handwritten digits dataset, so there are 10 classes for 10 digits, and they have a softmax activation so that the output represents a probability (the sum of the outputs is 1).
 
-<div style="text-align: center;">
+<div style="align: center;">
 
 ![Linear/Fully-Connected Layers User's Guide - NVIDIA Docs](https://docscontent.nvidia.com/dita/00000186-1a08-d34f-a596-3f291b140000/deeplearning/performance/dl-performance-fully-connected/graphics/fc-layer.svg)
 
