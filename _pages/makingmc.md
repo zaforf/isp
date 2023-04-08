@@ -35,7 +35,7 @@ First, as a disclaimer, we can't be sure why this is happening. The model is jus
 
 ### The Data
 Inevitably, that data is where the model learns all of its knowledge from. Thus, undesirable trends in the data become quirks in the model. For example, naturally, there is more variation among the pictures of faces wearing masks. As stated in the dataset description, the images with masks are scraped from Google, while the images without masks are taken from the CelebFace dataset by Jessica Li. 
-<div style="align: center;">
+<div align="center">
 
 ![](https://zaforf.github.io/isp/assets/1012.png) ![](https://zaforf.github.io/isp/assets/1037.png) ![](https://zaforf.github.io/isp/assets/1043.png)
 
@@ -45,7 +45,7 @@ Inevitably, that data is where the model learns all of its knowledge from. Thus,
 
 Obviously, the pictures of celebrities are more standardized: they are facing the camera. This is not the case with the mask-wearing images, which are pulled from numerous sources and comprise a large variety of face angles and resolutions. In other words, rather than detecting whether you are wearing a mask, the model might have learned to predict if you are looking to the side, since most of the images of faces looking to the side were in the mask-wearing pile.
 
-<div style="align: center;">
+<div align="center">
 
 ![](https://zaforf.github.io/isp/assets/1044.png)
 
