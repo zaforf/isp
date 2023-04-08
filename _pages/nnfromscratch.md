@@ -7,11 +7,9 @@ Here I will post results and what I learned from neural network from scratch (on
 
 I used my knowledge of gradient based learning and backpropagation as well as some example notebooks to create this network from scratch. This notebook in particular was especially helpful, especially for using `pandas`.
 
-<div align="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Irissetosa1.jpg" width=30%>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Blue_Flag%2C_Ottawa.jpg/440px-Blue_Flag%2C_Ottawa.jpg" width=22.5%>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Iris_virginica_2.jpg/440px-Iris_virginica_2.jpg" width=22.56%>
-</div>
 
 The three *Iris* species used in the famous Iris flower dataset
 
@@ -21,7 +19,7 @@ The code in the notebook is my second version, where I turned everything into fu
 
 ## The Functions
 
-```Python
+```python
 def initweights(archt):
     if len(archt)<3:
         raise ValueError("architecture needs atleast 1 hidden layer")
@@ -38,7 +36,7 @@ def initweights(archt):
 This function initializes the model. The architecture needs to be at least three layers because otherwise the backpropagation function doesn't work, since it's a bit janky. It initializes the random values in the range [-1.0, 1.0) (`np.random.random` returns random floats in the interval [0.0, 1.0)) and with the correct dimensions to support forward and backward propagation.
 
 ---
-```Python
+```python
 def forwardmodel(model,act,X):
     out = X
     ret = []
@@ -55,7 +53,7 @@ $$\text{activation}(Wx+b)$$
 for every layer. `ret[-1]`, the last output, is the final output of the model.
 
 ---
-```Python
+```python
 def backprop(model,fwret,dact,X,Y):
     # input is the model, result of forwardprop, derivative of activation function, and data
     # output is gradient in the same form as the model
@@ -74,14 +72,14 @@ def backprop(model,fwret,dact,X,Y):
 This function is the sacred backpropagation function. It is very ugly since it is spaghetti code but it works! `dl` is the derivative of the loss with respect to each loss that is carried through the model backwards. As it is carried through, the derivatives with respect to the weights and biases, calculated as described in the gradient based learning section, are added to the `grad` list. Thus the process of updating them looks a lot better than this code.
 
 ---
-```Python
+```python
 def acc(model,act,X,Y):
     return sum(forwardmodel(model,act,X)[-1].argmax(axis=1)==Y.argmax(axis=1))/len(X)
 ```
 This is the code for calculating the accuracy of the model. I knew I could do it in one line so I had to. What can I say?
 
 ---
-```Python
+```python
 error,accu=[],[]
 lr = 0.01 # the learning rate
 for epoch in range(1000): # 1000 epochs
@@ -97,7 +95,8 @@ Here is the code for the actual learning process. In this code snippet I'm using
 
 Since the gradient output of the backpropagation is the same format as the model, updating the parameters is very simple. Other than that, the code is pretty self explanatory. The operator for updating the parameters is `+=` instead of `-=` because the original calculation of `dl` already factors in a negation; the derivative of the loss function $0.5(y-\hat{y})^2$ should be $-(y-\hat{y})$ but instead it is calculated as $y-\hat{y}$.
 
-![](../assets/funkymodel.png){align:"center"}
+![](https://zaforf.github.io/isp/assets/funkymodel.png)
+
 *A funky model; (5,3,1,3,5)*
 
 Because of these awesome functions I can make any model architecture I choose. Obviously, some are better than others, but most reach at least 95% accuracy by 10,000 epochs on the Iris dataset.
@@ -107,19 +106,19 @@ Because of these awesome functions I can make any model architecture I choose. O
 My neural network works pretty well on the Iris dataset, but theoretically it should be able to model any function! I tried to model the `sin(x)` and similar functions, here are my results:
 
 
-![](../assets/sin.png)
+![](https://zaforf.github.io/isp/assets/sin.png)
 
 *Approximating $0.4\text{sin}(x)+0.5$ in 10000 epochs, mean abs error of 0.0003048*
 
-![](../assets/sinex.png)
+![](https://zaforf.github.io/isp/assets/sinex.png)
 
 *Approximating $0.4\text{sin}(x)+0.5$ from 0 to 14 when it was only trained on 0 to 7; as you can see, it can neither extrapolate well, nor reach values near 1 because of the sigmoid activation function*
 
-![](../assets/tan.png)
+![](https://zaforf.github.io/isp/assets/tan.png)
 
 *Approximating $\text{min}(\text{abs}(\text{tan}(x)),1)$; not $\text{tan}(x)$ because of the limitations of sigmoid*
 
-![](../assets/model.png)
+![](https://zaforf.github.io/isp/assets/model.png)
 
 *The model I used for the approximations; (1,10,10,10,1)*
 

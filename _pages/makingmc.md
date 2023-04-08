@@ -44,13 +44,9 @@ Inevitably, that data is where the model learns all of its knowledge from. Thus,
 
 Obviously, the pictures of celebrities are more standardized: they are facing the camera. This is not the case with the mask-wearing images, which are pulled from numerous sources and comprise a large variety of face angles and resolutions. In other words, rather than detecting whether you are wearing a mask, the model might have learned to predict if you are looking to the side, since most of the images of faces looking to the side were in the mask-wearing pile.
 
-<div align="center">
-
 ![](https://zaforf.github.io/isp/assets/1044.png)
 
 *An image in the mask-worn dataset*
-
-</div>
 
 The issue of data also explains why non-mask objects are perceived to be masks. The model does not know what a mask is; that was not its task. Instead, its task was to classify if people were wearing masks, and from the data it saw, it learned that the mouth and nose are usually covered when a mask is worn. Thus, when whatever specific pattern the model is looking for is satisfied, perhaps that the nose and mouth are covered, it assumes you are wearing a mask. This applies whether the object covering your face is a mask or not.
 
