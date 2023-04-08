@@ -1,8 +1,5 @@
 ---
-title: Contact
-author: Tao He
-date: 2022-02-05
-category: Jekyll
+title: Neural Network From Scratch
 layout: post
 ---
 
