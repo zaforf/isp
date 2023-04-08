@@ -37,7 +37,7 @@ First, as a disclaimer, we can't be sure why this is happening. The model is jus
 Inevitably, that data is where the model learns all of its knowledge from. Thus, undesirable trends in the data become quirks in the model. For example, naturally, there is more variation among the pictures of faces wearing masks. As stated in the dataset description, the images with masks are scraped from Google, while the images without masks are taken from the CelebFace dataset by Jessica Li. 
 <div style="text-align: center;">
 
-![](/assets/1012.png) ![](/assets/1037.png) ![](/assets/1043.png)
+![](https://zaforf.github.io/isp/assets/1012.png) ![](https://zaforf.github.io/isp/assets/1037.png) ![](https://zaforf.github.io/isp/assets/1043.png)
 
 *The most "angled" faces of the first 30 images in the both datasets*
 
@@ -47,7 +47,7 @@ Obviously, the pictures of celebrities are more standardized: they are facing th
 
 <div style="text-align: center;">
 
-![](/assets/1044.png)
+![](https://zaforf.github.io/isp/assets/1044.png)
 
 *An image in the mask-worn dataset*
 

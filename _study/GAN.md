@@ -32,7 +32,7 @@ There are many different types of GANs, each specialized to its own generation t
 5. **Wasserstein GANs (WGANs)**: A variant of GANs that uses a different loss function to improve performance. More about them can be found [here](https://zaforf.github.io/isp/study/GAN/#what-are-the-shortfalls-of-gans)
 6. **Progressive Growing GAN (PGGANs)**: GANs that create higher-quality image data by incrementally adding layers to the generator and discriminator during the training process. Thus, first the model learns structure, then progressively finer details. This is unlike a simpler GAN, which might reach an undesirable compromise by attempting to do both simultaneously
 
-![CycleGAN | TensorFlow Core](https://www.tensorflow.org/static/tutorials/generative/images/horse2zebra_1.png)
+![CycleGAN](https://www.tensorflow.org/static/tutorials/generative/images/horse2zebra_1.png)
 
 *The power of CycleGANs*
 

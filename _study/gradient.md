@@ -49,11 +49,11 @@ Finally, an activation function is applied element-wise (the function is applied
 
 $$ a = \sigma(z)$$
 
-Our model applies this operation to the output of each layer to get $\hat{y}$ from the last layer. Remember that the output of one layer is the input of the next. Finally, let us define the loss very simply as $y-\hat{y}$. Now, after this long definition, we can get to backpropagation. Specifically, the question is: how do we calculate the gradient of the loss with respect to every weight and bias? Here is the answer:
+Our model applies this operation to the output of each layer to get $\hat{y}$ from the last layer. Remember that the output of one layer is the input of the next. Finally, let us define the loss very simply as $y-\hat{y}$. Now, after defining these things, we can get to backpropagation. Specifically, the question is: how do we calculate the gradient of the loss with respect to every weight and bias? Here is the answer:
 
 $$\begin{equation} \frac{\partial L}{\partial W_j}=\frac{\partial L}{\partial a_j}\frac{\partial a_j}{\partial z_j}  \frac{\partial z_j}{\partial W_j} \end{equation}$$
 
-Where the subscript $j$ means we are referring to each of the $W$, $a$, and $z$ of the $j$th layer. The fancy $\partial$ symbol means that we are taking the partial derivative, which is like a normal derivative, but you treat everything as a constant, except obviously whatever the derivative is taken with respect to. From this we see that
+Where the subscript $j$ means we are referring to each of the $W$, $a$, and $z$ of the $j$th layer. The fancy symbol $\partial$ means that we are taking the partial derivative, which is like a normal derivative, but you treat everything as a constant (except whatever the derivative is taken with respect to). From this we see that
 
 $$\frac{\partial z_j}{\partial W_j} = x = a_{j-1}$$
 
@@ -61,7 +61,7 @@ which follows from $(1)$. Similarly we can extend this to the gradient of the $i
 
 $$\frac{\partial z_j}{\partial b_j} = 1$$
 
-How do we extend this to models with many layers? $\frac{\partial L}{\partial a_j}$ in $(2)$ bcomes
+How do we extend this to models with many layers? $\frac{\partial L}{\partial a_j}$ in $(2)$ becomes
 
 $$\frac{\partial L}{\partial a_j} = \frac{\partial L}{\partial a_{j+1}}\frac{\partial a_{j+1}}{\partial z_{j+1}}\frac{\partial z_{j+1}}{\partial a_j}$$
 
@@ -71,11 +71,11 @@ $$\frac{\partial L}{\partial a_{last}} = y-\hat{y}$$
 
 This is where the name "backpropagation" comes from, since you propagate the error, or loss, backwards layer by layer. And that's all! Very simple!
 
-> Well Zafir, that's just the chain rule!
+> So it's just the chain rule?
 
-💯
+Yes.
 
-**Some clarifying notes:**
+#### Some clarifications:
 
 $$\frac{\partial z_{j+1}}{\partial a_j}=W_j$$
 by $(1)$, noting that for every layer $a$ becomes the input $x$ for the next layer.
@@ -84,9 +84,10 @@ $\frac{\partial a}{\partial z}$ is the derivative of the activation function. Fo
 
 $$\sigma'(x) = \sigma(x)(1-\sigma(x))$$
 
-Which makes its calculation pretty simple. A proof can be found [here](https://towardsdatascience.com/derivative-of-the-sigmoid-function-536880cf918e). 
+which makes its calculation pretty simple. A proof can be found [here](https://towardsdatascience.com/derivative-of-the-sigmoid-function-536880cf918e). 
 
 Once the gradient is calculated, the weights and biases are updated like this:
+
 $$W_j = W_j-\delta \frac{\partial L}{\partial W_j}$$
 
 $$b_j = b_j-\delta \frac{\partial L}{\partial b_j}$$

@@ -33,7 +33,7 @@ Now, hopefully you can try to understand this image!
 Here's a simpler diagram. Note that it does not show how multiple filters are being applied. The convolution also does not necessarily force the model to "look" at only a portion of the image, although it may encourage this through its filters.
 
 CNNs are proven to be better for image classification and related tasks compared to other models. Here's how one might implement a CNN in TensorFlow.
-```Py
+```python
 model = tf.keras.Sequential([
 	tf.keras.layers.Conv2D(32, (3,3), padding='same', activation=tf.nn.relu,
 		input_shape=(28, 28, 1)),
@@ -47,9 +47,13 @@ model = tf.keras.Sequential([
 ```
 The two last layers are the fully connected "normal" neural network layers. There are 128 nodes of fully connected neurons, which means that each of the nodes is connected to each flattened neuron, followed by 10 neurons in the output layer. This model was made for classifying the MNIST handwritten digits dataset, so there are 10 classes for 10 digits, and they have a softmax activation so that the output represents a probability (the sum of the outputs is 1).
 
+<div style="text-align: center;">
+
 ![Linear/Fully-Connected Layers User's Guide - NVIDIA Docs](https://docscontent.nvidia.com/dita/00000186-1a08-d34f-a596-3f291b140000/deeplearning/performance/dl-performance-fully-connected/graphics/fc-layer.svg)
 
 *A set of output neurons fully connected to a sit of input neurons*
+
+</div>
 
 Obviously, the amount of output neurons for a CNN changes based on the task. For example, in a binary (two-class) classification problem, the output layer would be one neuron, representing the probability of the input being one of the classes. This would use the sigmoid activation function.
 ![Sigmoid function - Wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/1200px-Logistic-curve.svg.png)
