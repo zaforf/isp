@@ -21,7 +21,7 @@ The answer is a deep learning algorithm called a **convolutional neural network*
 ![Kernel being applied to an image](https://anhreynolds.com/img/cnn.png)
 *The 3x3 kernel is applied to the 6x6 image; In this case, the output is 1+3+5+6+7+9=31*
 
-More about CNNs is covered here. The genius of convolutions is that they **mimic human vision**, specifically feature detectors, and how incredibly responsive we are to patterns in information. 
+More about CNNs is covered [here](https://zaforf.github.io/isp/study/CNN/). The genius of convolutions is that they **mimic human vision**, specifically feature detectors, and how incredibly responsive we are to patterns in information. 
 
 These layers, which are applied many times, simplify the image to respond to learnable patterns. While we cannot consult the model to see what patterns it is looking for (again, it's just a bunch of numbers), you can imagine how a specific part of the output may measure the presence of a nose or mouth. It's easy to see how this information could be used to infer whether someone is wearing a mask.
 

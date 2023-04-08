@@ -19,13 +19,13 @@ Still, besides convolutional layers, there are also max-pooling layers. Max-pool
 
  - **Strides** define how far each filter moves in between the locations it is applied
  - Max pooling essentially summarizes an image. The model can either learn to make important parts of the image have higher values or naturally prefer brighter parts of the image, which usually provide more information
-  - Activation functions are applied before max pooling. More about activation functions can be found here. Briefly, activation functions both normalize and add complexity to the output of a neuron. For example, the ReLU (Rectified Linear Unit) activation function replaces negative values with 0 through the function $ReLU(x) = max(0,x)$
+  - Activation functions are applied before max pooling. Briefly, activation functions both normalize and add complexity to the output of a neuron. For example, the ReLU (Rectified Linear Unit) activation function replaces negative values with 0 through the function $ReLU(x) = max(0,x)$
  
 ![A diagram of a CNN](https://miro.medium.com/v2/resize:fit:1400/1*uAeANQIOQPqWZnnuH-VEyw.jpeg)
 
 Now, hopefully you can try to understand this image!
  - The size of the output of `Conv_1` is (24 x 24 x # of filters, or n1)
- - Ignore the `Fully-Connected` layers, more about them can be found here
+ - Ignore the `Fully-Connected` layers, more about them can be found [here](https://zaforf.github.io/isp/study/gradient/)
  - When the last `Max-Pooling` layer is flattened, the (4 x 4 x n2) layer is transformed into a ((4 * 4 * n2) x 1) layer, compressing the data into 1-dimensional array
 
 ![A simpler diagram of a CNN](https://miro.medium.com/v2/resize:fit:1400/1*vkQ0hXDaQv57sALXAJquxA.jpeg)
@@ -56,6 +56,7 @@ The two last layers are the fully connected "normal" neural network layers. Ther
 </div>
 
 Obviously, the amount of output neurons for a CNN changes based on the task. For example, in a binary (two-class) classification problem, the output layer would be one neuron, representing the probability of the input being one of the classes. This would use the sigmoid activation function.
-![Sigmoid function - Wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Logistic-curve.svg/1200px-Logistic-curve.svg.png)
 
-*The sigmoid activation function, $σ(x) = \frac{1}{1+e^{-x}}$*
+![Sigmoid function - Wikipedia](https://zaforf.github.io/isp/assets/sigmoid.png)
+
+*The sigmoid activation function $σ(x) = \frac{1}{1+e^{-x}}$*

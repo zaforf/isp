@@ -95,4 +95,4 @@ $$W_j = W_j-\delta \frac{\partial L}{\partial W_j}$$
 
 $$b_j = b_j-\delta \frac{\partial L}{\partial b_j}$$
 
-To see all of this applied, check out my neural network made from scratch!
+To see all of this applied, check out my [neural network made from scratch](https://zaforf.github.io/isp/pages/nnfromscratch/)!

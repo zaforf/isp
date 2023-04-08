@@ -5,11 +5,11 @@ layout: post
 Here I will post results and what I learned from neural network from scratch (only numpy) project, which can be found at this link:
 [https://www.kaggle.com/code/zafirnasim/nnfromscratch](https://www.kaggle.com/code/zafirnasim/nnfromscratch)
 
-I used my knowledge of gradient based learning and backpropagation as well as some example notebooks to create this network from scratch. This notebook in particular was especially helpful, especially for using `pandas`.
+I used my knowledge of gradient-based learning and backpropagation, as well as some example notebooks, to create this network from scratch. This notebook in particular was especially helpful, especially for using `pandas`.
 
 <div align="center" markdown="1">
 
-![](https://zaforf.github.io/isp/assets/rsz_iris1.png)
+![](https://zaforf.github.io/isp/assets/iris1.png)
 ![](https://zaforf.github.io/isp/assets/rsz_iris2.png)
 ![](https://zaforf.github.io/isp/assets/rsz_iris3.png)
 
@@ -19,7 +19,7 @@ The three *Iris* species used in the famous Iris flower dataset
 
 </div>
 
-The code in the notebook is my second version, where I turned everything into functions. The original version had a set architecture of `(4,5,3)`, the same as the original notebook that I used for reference. In this newer version I can make any model architecture and train it by calling only a few functions, which I think is really cool!
+The code in the notebook is my second version, where I turned everything into functions. The original version had a set architecture of `(4,5,3)`, the same as the original notebook that I used for reference. In this newer version, I can make any model architecture and train it by calling only a few functions, which I think is really cool!
 
 ## The Functions
 
@@ -37,7 +37,7 @@ def initweights(archt):
         model.append([w,b])
     return model
 ```
-This function initializes the model. The architecture needs to be at least three layers because otherwise the backpropagation function doesn't work, since it's a bit janky. It initializes the random values in the range [-1.0, 1.0) (`np.random.random` returns random floats in the interval [0.0, 1.0)) and with the correct dimensions to support forward and backward propagation.
+This function initializes the model. The architecture needs to be at least three layers because otherwise the backpropagation function doesn't work since it's a bit janky. It initializes the random values in the range [-1.0, 1.0) (`np.random.random` returns random floats in the interval [0.0, 1.0)) and with the correct dimensions to support forward and backward propagation.
 
 ---
 ```python
@@ -50,7 +50,7 @@ def forwardmodel(model,act,X):
         ret.append(out)
     return ret
 ```
-This function calculates the output of the model given the input by running a forward pass. It's really simple since the operations are optimized through linear algebra. As described in the gradient based learning section, it is simply calculating
+This function calculates the output of the model given the input by running a forward pass. It's really simple since the operations are optimized through linear algebra. As described in the gradient-based learning section, it is simply calculating
 
 $$\text{activation}(Wx+b)$$
 
@@ -73,14 +73,14 @@ def backprop(model,fwret,dact,X,Y):
     grad[0] = (np.dot(X.T,dl),np.dot(np.ones((1,dl.shape[0])),dl))
     return grad
 ```
-This function is the sacred backpropagation function. It is very ugly since it is spaghetti code but it works! `dl` is the derivative of the loss with respect to each loss that is carried through the model backwards. As it is carried through, the derivatives with respect to the weights and biases, calculated as described in the gradient based learning section, are added to the `grad` list. Thus the process of updating them looks a lot better than this code.
+This function is the sacred backpropagation function. It is very ugly since it is spaghetti code, but it works! `dl` is the derivative of the loss with respect to each loss that is carried through the model backwards. As it is carried through, the derivatives with respect to the weights and biases, calculated as described in the gradient-based learning section, are added to the `grad` list. Thus, the process of updating them looks a lot better than this code.
 
 ---
 ```python
 def acc(model,act,X,Y):
     return sum(forwardmodel(model,act,X)[-1].argmax(axis=1)==Y.argmax(axis=1))/len(X)
 ```
-This is the code for calculating the accuracy of the model. I knew I could do it in one line so I had to. What can I say?
+This is the code for calculating the accuracy of the model. I knew I could do it in one line, so I had to. What can I say?
 
 ---
 ```python
@@ -95,9 +95,9 @@ for epoch in range(1000): # 1000 epochs
     error.append(abs(0.5*np.square(Y-fwret[-1])).mean())
     accu.append(acc(model,sigmoid,X,Y))
 ```
-Here is the code for the actual learning process. In this code snippet I'm using the sigmoid activation function, which gets the best results, but I also added the ReLU function to try it out. For more information about activation functions, go here.
+Here is the code for the actual learning process. In this code snippet, I'm using the sigmoid activation function, which got the best results in my tests, but I also added the ReLU function to try it out.
 
-Since the gradient output of the backpropagation is the same format as the model, updating the parameters is very simple. Other than that, the code is pretty self explanatory. The operator for updating the parameters is `+=` instead of `-=` because the original calculation of `dl` already factors in a negation; the derivative of the loss function $0.5(y-\hat{y})^2$ should be $-(y-\hat{y})$ but instead it is calculated as $y-\hat{y}$.
+Since the gradient output of the backpropagation is in the same format as the model, updating the parameters is very simple. Other than that, the code is pretty self-explanatory. The operator for updating the parameters is `+=` instead of `-=` because the original calculation of `dl` already factors in a negation; the derivative of the loss function $0.5(y-\hat{y})^2$ should be $-(y-\hat{y})$ but instead it is calculated as $y-\hat{y}$.
 
 <div align="center" markdown="1">
 
@@ -106,11 +106,11 @@ Since the gradient output of the backpropagation is the same format as the model
 *A funky model; (5,3,1,3,5)*
 </div>
 
-Because of these awesome functions I can make any model architecture I choose. Obviously, some are better than others, but most reach at least 95% accuracy by 10,000 epochs on the Iris dataset.
+Because of these awesome functions, I can make any model with any architecture I choose. Obviously, some are better than others, but most reach at least 95% accuracy by 10,000 epochs on the Iris dataset.
 
 ## Modelling Functions
 
-My neural network works pretty well on the Iris dataset, but theoretically it should be able to model any function! I tried to model the `sin(x)` and similar functions, here are my results:
+My neural network works pretty well on the Iris dataset, but theoretically it should be able to model any function! I tried to model `sin(x)` and similar functions; here are my results:
 
 <div align="center" markdown="1">
 
