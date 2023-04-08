@@ -8,11 +8,14 @@ Here I will post results and what I learned from neural network from scratch (on
 I used my knowledge of gradient based learning and backpropagation as well as some example notebooks to create this network from scratch. This notebook in particular was especially helpful, especially for using `pandas`.
 
 <div align="center">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Irissetosa1.jpg" width=30%> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Blue_Flag%2C_Ottawa.jpg/440px-Blue_Flag%2C_Ottawa.jpg" width=22.5%> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Iris_virginica_2.jpg/440px-Iris_virginica_2.jpg" width=22.56%> <br>
-The three *Iris* species used in the famous Iris flower dataset <br>
-*Iris Setosa*, *Iris Versicolour*, *Iris Virginica*
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Irissetosa1.jpg" width=30%>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Blue_Flag%2C_Ottawa.jpg/440px-Blue_Flag%2C_Ottawa.jpg" width=22.5%>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Iris_virginica_2.jpg/440px-Iris_virginica_2.jpg" width=22.56%>
 </div>
+
+The three *Iris* species used in the famous Iris flower dataset
+
+*Iris Setosa*, *Iris Versicolour*, *Iris Virginica*
 
 The code in the notebook is my second version, where I turned everything into functions. The original version had a set architecture of `(4,5,3)`, the same as the original notebook that I used for reference. In this newer version I can make any model architecture and train it by calling only a few functions, which I think is really cool!
 
@@ -94,10 +97,8 @@ Here is the code for the actual learning process. In this code snippet I'm using
 
 Since the gradient output of the backpropagation is the same format as the model, updating the parameters is very simple. Other than that, the code is pretty self explanatory. The operator for updating the parameters is `+=` instead of `-=` because the original calculation of `dl` already factors in a negation; the derivative of the loss function $0.5(y-\hat{y})^2$ should be $-(y-\hat{y})$ but instead it is calculated as $y-\hat{y}$.
 
-<div align="center"><img src="../assets/funkymodel.png">
-
+![](../assets/funkymodel.png){align:"center"}
 *A funky model; (5,3,1,3,5)*
-</div>
 
 Because of these awesome functions I can make any model architecture I choose. Obviously, some are better than others, but most reach at least 95% accuracy by 10,000 epochs on the Iris dataset.
 
@@ -105,7 +106,6 @@ Because of these awesome functions I can make any model architecture I choose. O
 
 My neural network works pretty well on the Iris dataset, but theoretically it should be able to model any function! I tried to model the `sin(x)` and similar functions, here are my results:
 
-<div align="center">
 
 ![](../assets/sin.png)
 
