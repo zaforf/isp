@@ -4,9 +4,9 @@ layout: post
 category: Jekyll
 ---
 
-Here are the unedited notes that I maintained throughout the whole project! There are a lot of helpful links if you are studying on your own, as well as some content I haven't gotten around to adding to the site yet, such as RNNs, so feel free to look around! 
+Here are the unedited notes that I made during the project. There are a lot of helpful links if you are studying on your own, as well as some content I haven't gotten around to adding to the site yet, such as RNNs, so feel free to look around! 
 
-I apologize for some of the really large images—I exported these notes directly from notion.so
+Sorry about some of the really large images—I exported these notes directly from notion.
 
 ---
 
