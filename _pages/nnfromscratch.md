@@ -10,8 +10,8 @@ I used my knowledge of gradient-based learning and backpropagation, as well as s
 <div align="center" markdown="1">
 
 ![](https://zaforf.github.io/isp/assets/iris1.jpg)
-![](https://zaforf.github.io/isp/assets/rsz_iris2.png)
-![](https://zaforf.github.io/isp/assets/rsz_iris3.png)
+![](https://zaforf.github.io/isp/assets/iris2.jpg)
+![](https://zaforf.github.io/isp/assets/iris3.jpg)
 
 The three *Iris* species used in the famous Iris flower dataset
 
