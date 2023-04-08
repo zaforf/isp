@@ -6,6 +6,8 @@ category: Jekyll
 
 Here are the unedited notes that I maintained throughout the whole project! There are a lot of helpful links if you are studying on your own, as well as some content I haven't gotten around to adding to the site yet, such as RNNs, so feel free to look around! 
 
+I apologize for some of the really large images—I exported these notes directly from notion.so
+
 ---
 
 - Datacamp
@@ -36,7 +38,9 @@ Here are the unedited notes that I maintained throughout the whole project! Ther
 5. Test our model
 6. Improve the model and repeat the process!
 
-# [Udacity, Intro to TensorFlow for Deep Learning](https://www.udacity.com/course/intro-to-tensorflow-for-deep-learning--ud187)
+# Udacity, Intro to TensorFlow for Deep Learning
+
+[Link to course](https://www.udacity.com/course/intro-to-tensorflow-for-deep-learning--ud187)
 
 
 - **Deep Learning:** a subfield of machine learning that uses multi-layered neural networks, often used interchangeably with “deep learning”
@@ -361,7 +365,7 @@ Note the yellow cells are preceded by Dense cells
 
 **GRUs** (Gated Recurrent Unit) are quite similar to **LSTM** cells, with a reset and update gate, however it has less gates in total, often making it faster
 
-### **Return of CNNs**
+### Return of CNNs
 
 - Using a 1D-convolutional layer you can similarly include context. Analogous to using CNNs for 2D images but in 1D
 - Stacking multiple CNNs can address limitations, such as the window or kernel size
@@ -442,7 +446,7 @@ How do we generate text?
 - This can be done using the same model architecture and changing the output to a one-hot categorical class output, each class being a word
     - There is more obvious changes to the data; Input data takes chunks of sequences, with the last word being its label
 
-### **N-grams**
+### N-grams
 
 - The simplest text generation model would be one that assigns probabilities of a word given a certain history
 
