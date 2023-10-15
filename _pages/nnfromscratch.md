@@ -5,7 +5,7 @@ layout: post
 Here I will post results and what I learned from neural network from scratch (only numpy) project, which can be found at this link:
 [https://www.kaggle.com/code/zafirnasim/nnfromscratch](https://www.kaggle.com/code/zafirnasim/nnfromscratch)
 
-I used my knowledge of gradient-based learning and backpropagation, as well as some example notebooks, to create this network from scratch. This notebook in particular was especially helpful, especially for using `pandas`.
+I used my knowledge of gradient-based learning and backpropagation, as well as some example notebooks, to create this network from scratch. [This notebook](https://www.kaggle.com/code/ancientaxe/simple-neural-network-from-scratch-in-python) in particular was especially helpful, especially for using `pandas`.
 
 <div align="center" markdown="1">
 
