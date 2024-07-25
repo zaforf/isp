@@ -73,7 +73,7 @@ def backprop(model,fwret,dact,X,Y):
     grad[0] = (np.dot(X.T,dl),np.dot(np.ones((1,dl.shape[0])),dl))
     return grad
 ```
-This function is the sacred backpropagation function. It is very ugly since it is spaghetti code, but it works! `dl` is the derivative of the loss with respect to each loss that is carried through the model backwards. As it is carried through, the derivatives with respect to the weights and biases, calculated as described in the gradient-based learning section, are added to the `grad` list. Thus, the process of updating them looks a lot better than this code.
+This function is the sacred backpropagation function. `dl` is the derivative of the loss with respect to each loss that is carried through the model backwards. As it is carried through, the derivatives with respect to the weights and biases, calculated as described in the gradient-based learning section, are added to the `grad` list. Thus, the process of updating them looks a lot better than this code.
 
 ---
 ```python
