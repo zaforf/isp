@@ -3,7 +3,7 @@ title: Connect 4 MCTS
 layout: post
 ---
 <div align="center">
-    <img src="../assets/nice_win.gif" width="300"/><br>
+    <img src="https://zaforf.github.io/isp/assets/nice_win.gif" width="300"/><br>
     <em>MCTS (Red) finds a nice win against a real player</em>
 </div><br>
 
@@ -19,7 +19,7 @@ This project is an implementation of [Monte Carlo tree search](https://en.wikipe
 In a public tournament, the bot was able to place in the top 1% (19/2460), with an impressive record of 65 wins to 8 losses. Note that it's likely other players used similar tools. Wins ranged from those against guests to accounts with almost 50,000 wins.
 
 <p align="center">
-<img src="../assets/tournament.png" width="300"/>
+<img src="https://zaforf.github.io/isp/assets/tournament.png" width="300"/>
 </p>
 
 ---
@@ -74,7 +74,7 @@ To speed up computation, my earlier implementations overlooked states that were 
 Consider the following game state, which I encountered while facing the AI off against real players:
 
 <p align="center">
-<img src="../assets/blunder.png" width="300"/>
+<img src="https://zaforf.github.io/isp/assets/blunder.png" width="300"/>
 </p>
 
 The AI made the move in white, which was immediately followed by the winning move in black. How could it make such an obvious blunder?? Then it hit me: since the AI doesn't simulate terminal states, it didn't even consider the move in black. Instead, it considered every other move by red—each of which **would've allowed the AI an immediate win, playing in the exact slot that was overlooked**—explaining why it made the move in the first place.
